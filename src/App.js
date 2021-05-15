@@ -7,7 +7,7 @@ class App extends Component {
     this.loadBlockChainData();
   }
   async loadBlockChainData() {
-    const web3 = new Web3(Web3.givenProvider);
+    const web3 = new Web3(Web3.givenProvider || "localhost://8545");
     const network = await web3.eth.net.getNetworkType();
     console.log('network:', network);
   }
